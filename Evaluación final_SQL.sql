@@ -250,8 +250,10 @@ INNER JOIN film AS f
 ON i.film_id=f.film_id;
 
 #LA SOLUCIÓN DEL EJERCICIO 22 ES EL SIGUIENTE BLOQUE DE CÓDIGO:
-#Agrupamos por titulo porque una misma pelicula, está en diferentes tiendas y hay diferentes ejemplares de esa película, 
-#por lo que si no agrupamos nos devuelve repetidas tantas peliculas como veces se haya alquilado cada ejemplar y haya tardado en devolverse más de 5 días.
+
+#Agrupamos por título porque un mismo título, está en diferentes tiendas y hay diferentes ejemplares, por lo que si no agrupamos nos devuelve repetidas 
+#tantos valores como veces se haya alquilado cada ejemplar y haya tardado en devolverse más de 5 días.
+
 SELECT f.title
 FROM rental AS r
 INNER JOIN inventory AS i
@@ -267,7 +269,7 @@ GROUP BY f.title;
 #23.Encuentra el nombre y apellido de los actores que no han actuado en ninguna película de la categoría "Horror".
 # Utiliza una subconsulta para encontrar los actores que han actuado en películas de la categoría "Horror" y luego exclúyelos de la lista de actores.
 
-#Aquí tengo todos los actores que salen en las peliculas de categoría Horror: 
+#Aquí tengo todos los actores que salen en las películas de categoría Horror: 
 
 SELECT a.first_name, a.last_name, c.name
 FROM actor AS a 

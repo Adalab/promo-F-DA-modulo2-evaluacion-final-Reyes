@@ -61,11 +61,11 @@ ON c.customer_id=r.customer_id;
 
 #LA SOLUCION DEL EJERCICIO 10 ES EL SIGUIENTE BLOQUE DE CÓDIGO:
 
-SELECT c.first_name AS Nombre, c.last_name AS Apellido, COUNT(rental_id) AS Total_alquileres
+SELECT c.first_name AS Nombre, c.last_name AS Apellido, c.customer_id,  COUNT(rental_id) AS Total_alquileres
 FROM customer AS c
 INNER JOIN rental AS r
 ON c.customer_id=r.customer_id
-GROUP BY Nombre, Apellido;
+GROUP BY c.customer_id;
 
 #11. Encuentra la cantidad total de películas alquiladas por categoría y muestra el nombre de la categoría junto con el recuento de alquileres.
 
